@@ -1,0 +1,10 @@
+{
+    "files": [
+        "Canvas/Ycanvas.qml",
+        "Component/Element.qml",
+        "Component/Line.qml",
+        "JS/Fun.js",
+        "main.py",
+        "main.qml"
+    ]
+}
