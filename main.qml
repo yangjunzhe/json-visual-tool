@@ -12,8 +12,9 @@ Window {
     visible: true
     width: Screen.width * 0.7
 
-    Ycanvas {
+    AScreen {
         id: ycanvas
 
+        color: root.color
     }
 }

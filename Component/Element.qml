@@ -28,21 +28,22 @@ element:
         double rectCenterX
         double rectCenterY
 */
-
 Item {
     id: root
 
     property alias abbreviate: abbreviate
     property alias abbreviateTap: abbreviateTap
-    property alias connectDown: connectDown         //  alias link rectangle connectDown
+    property alias connectDown: connectDown //  alias link rectangle connectDown
     property bool connectEnable: false
-    property alias connectLeft: connectLeft         //  alias link rectangle connectLeft
-    property alias connectRight: connectRight       //  alias link rectangle connectRight
-    property int connectSize: 4                     //  rectangle connect size
-    property alias connectUp: connectUp             //  alias link rectangle connectUp
-    property alias rect: rect                       //  alias link rectangle rect
-    property alias rectDrag: rectDrag               //  drag enable binding rect->DragHandler
-    property alias text: rectText.text              //  text name binding rect->Text
+    property alias connectLeft: connectLeft //  alias link rectangle connectLeft
+    property alias connectRight: connectRight //  alias link rectangle connectRight
+    property int connectSize: 4 //  rectangle connect size
+    property alias connectUp: connectUp //  alias link rectangle connectUp
+    property alias itemX: rect.x
+    property alias itemY: rect.y
+    property alias rect: rect //  alias link rectangle rect
+    property alias rectDrag: rectDrag //  drag enable binding rect->DragHandler
+    property alias text: rectText.text //  text name binding rect->Text
 
     anchors.fill: parent
     scale: 1
@@ -50,11 +51,11 @@ Item {
     Rectangle {
         id: rect
 
-        property double rectCenterX: rect.x + rect.width / 2        //  rectangel rect center x
-        property double rectCenterY: rect.y + rect.height / 2       //  rectangel rect center y
+        property double rectCenterX: rect.x + rect.width / 2 //  rectangel rect center x
+        property double rectCenterY: rect.y + rect.height / 2 //  rectangel rect center y
 
         // color: rectHover.hovered ? "#87CEFF" : "#87CEEC"    // mouse hovered
-        color: "snow"
+        color: "#ffffff"
         focus: false
         height: root.height * 0.07
         radius: 3
@@ -62,7 +63,7 @@ Item {
         width: root.width * 0.1
 
         border {
-            color: rectHover.hovered ? "lavender" : "slategrey"  // mouse clicked change item focus
+            color: rectHover.hovered ? "lavender" : "slategrey" // mouse clicked change item focus
             width: 1
         }
         //  rectangel text
@@ -127,8 +128,8 @@ Item {
     Rectangle {
         id: connectUp
 
-        property double centerX: x + width / 2      //  rectangel connectUp center x
-        property double centerY: y + height / 2     //  rectangel connectUp center y
+        property double centerX: x + width / 2 //  rectangel connectUp center x
+        property double centerY: y + height / 2 //  rectangel connectUp center y
 
         color: "black"
         focus: false
@@ -142,8 +143,8 @@ Item {
     Rectangle {
         id: connectRight
 
-        property double centerX: x + width / 2      //  rectangel connectRight center x
-        property double centerY: y + height / 2     //  rectangel connectRight center y
+        property double centerX: x + width / 2 //  rectangel connectRight center x
+        property double centerY: y + height / 2 //  rectangel connectRight center y
 
         color: "black"
         focus: false
@@ -157,8 +158,8 @@ Item {
     Rectangle {
         id: connectDown
 
-        property double centerX: x + width / 2      //  rectangel connectDown center x
-        property double centerY: y + height / 2     //  rectangel connectDown center y
+        property double centerX: x + width / 2 //  rectangel connectDown center x
+        property double centerY: y + height / 2 //  rectangel connectDown center y
 
         color: "black"
         focus: false
@@ -172,8 +173,8 @@ Item {
     Rectangle {
         id: connectLeft
 
-        property double centerX: x + width / 2      //  rectangel connectLeft center x
-        property double centerY: y + height / 2     //  rectangel connectLeft center y
+        property double centerX: x + width / 2 //  rectangel connectLeft center x
+        property double centerY: y + height / 2 //  rectangel connectLeft center y
 
         color: "black"
         focus: false

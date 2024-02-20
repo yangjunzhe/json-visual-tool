@@ -1,6 +1,8 @@
 {
     "files": [
-        "Canvas/Ycanvas.qml",
+        "Canvas/AScreen.qml",
+        "Canvas/ACreateElement.qml",
+        "Component/Connection.qml",
         "Component/Element.qml",
         "Component/Line.qml",
         "JS/Fun.js",

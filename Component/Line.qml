@@ -14,23 +14,25 @@ element:
     function:
         onPaint
 */
-
 Item {
     id: root
 
-    property int anyWay: 0      //  0: cross direction; 1: direction
+    property int anyWay: 0 //  0: cross direction; 1: direction
     property bool anyWayEnable: false
+    property alias itemX: canvas.x
+    property alias itemY: canvas.y
     property int lineType: 0
-    property list<double> position: [0, 0, 0, 0]    // line position form begin to end
+    property list<double> position: [0, 0, 0, 0] // line position form begin to end
 
-    signal draw     //  line draw signal
+    signal draw
 
+    //  line draw signal
     anchors.fill: parent
 
     //  draw signal connect function
     onDraw: {
         // console.debug("canvas beginX is: ", root.position[0], " beginY is: ", root.position[1], " endX is: ", root.position[2], "endY is: ", root.position[3]);
-        canvas.requestPaint();      //  line repainting
+        canvas.requestPaint(); //  line repainting
     }
 
     // Canvas class
@@ -41,18 +43,19 @@ Item {
 
         //  painting function
         onPaint: {
-            var ctx = getContext("2d");     //  2d context
-            ctx.lineWidth = 1.5;        //  line width
-            ctx.strokeStyle = "darkslategray";      // line color
+            var ctx = getContext("2d");
+            //  2d context
+            ctx.lineWidth = 1.5; //  line width
+            ctx.strokeStyle = "darkslategray"; // line color
             ctx.beginPath();
-            ctx.clearRect(0, 0, canvas.width, canvas.height);   //  clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height); //  clear canvas
             ctx.stroke();
             switch (lineType) {
             case 0:
                 {
                     ctx.beginPath();
-                    ctx.moveTo(root.position[0], root.position[1]);     //start point
-                    ctx.lineTo(root.position[2], root.position[3]);     // end point
+                    ctx.moveTo(root.position[0], root.position[1]); //start point
+                    ctx.lineTo(root.position[2], root.position[3]); // end point
                     break;
                 }
             case 1:
